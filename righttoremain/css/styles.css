@@ -1,0 +1,1605 @@
+/*
+Theme Name: Right To Remain
+Author: Red Ink
+Author URI: https://www.redink.co.uk
+Description: Right To Remain Styling
+Version: 1
+*/
+
+:root {
+    /*colors*/
+    --blue: #3F51B5;
+    --blue-hover: #0a67b2;
+    --gold: #ccb404;
+    --orange: #e09900;
+    --off-white: #f4f4f4;
+    --card-front: #45b0dd;
+    --card-back: #4aca4b;
+    /*section colours - now chosen via WP
+    --asylum: #EBB4FE;
+    --welfare: #BA74F9;
+    --local: #5941EF;
+    --evidence: #1F7FE0;
+    --interview: #13C8D6;
+    --positive: #09CA7A;
+    --refusal: #5BAD00;
+    --submit-appeal: #E05000;
+    --appeal-hearing: #AD4800;*/
+    /*font-sizes*/
+    --p-large: 1.3rem;
+    --p-medium: 1.1rem;
+    --p-small: 1rem;
+    --p-large-mobile: 1.1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*force a scroll bar to avoid 'jump'*/
+
+html {
+    overflow-y: scroll;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #666;
+    line-height: 1.7rem;
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/*======= TYPOGRAPHIC STYLES & UTLITIES ========================*/
+
+.hidden {
+    position: absolute;
+    left: -999px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+a:hover {
+    color: var(--gold);
+}
+
+ul {
+    list-style: disc;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.container h3 {
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: clamp(.3rem, 1.1rem, 1.5rem);
+}
+
+.mb2 {
+    margin-bottom: 2rem;
+}
+.hide{
+    display: none;
+}
+/*===== LAYOUT ====================================*/
+
+/*height: 100vh; - doesn't work well on mobile if content overflows
+So apart from slides where the content is fixed and manageable - Home, Footer -
+the 100vh is restricted to screens above mobile size
+*/
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 700px) {
+    .container {
+        min-height: 100vh;
+    }
+}
+
+.container.home, .container.overview {
+    min-height: 100vh;
+    background: transparent;
+}
+
+.container {
+    padding: 0 30px 30px 30px;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.claim-asylum .container, .star-cards .container, .welfare-interview .container, .local-authority-care .container, .evidence .container, .interview.container, .positive .container, .refusal .container, .submit-appeal .container, .appeal-hearing .container {
+    padding-top: 2rem;
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 35%;
+}
+
+@media (max-width: 500px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*===== MAIN NAVIGATION  ==================*/
+
+/*=== open & close btns ===*/
+
+.menu-open-btn {
+    width: 75px;
+    height: 100px;
+    padding: 5px 0 0 5px;
+    position: absolute;
+    top: 10%;
+    left: 365px;
+    background-color: var(--off-white);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    -webkit-box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.menu-open-btn p {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    .menu-open-btn p {
+        transform: rotate(-90deg);
+        display: block;
+        text-align: center;
+        margin: 0 0 0 .1rem;
+        text-transform: uppercase;
+    }
+    .menu-open-btn p i {
+        transform: rotate(90deg);
+        display: block;
+        text-align: center;
+        padding-left: 10px;
+    }
+}
+
+/*.menu-open-btn-mobile {
+    display: none;
+}*/
+
+.arrow-right, .arrow-down {
+    transition: .3s all;
+    transform: rotate(0deg);
+}
+
+/* arrow colours for each section - now set thru WP
+
+.claim-asylum .arrow-right, .claim-asylum .menu-open-btn p {
+    color: var(--asylum);
+}
+
+.welfare-interview .arrow-right, .welfare-interview .menu-open-btn p {
+    color: var(--welfare);
+}
+
+.local .arrow-right, .local .menu-open-btn p {
+    color: var(--local);
+}
+
+.evidence .arrow-right, .evidence .menu-open-btn p {
+    color: var(--evidence);
+}
+
+.interview .arrow-right, .interview .menu-open-btn p {
+    color: var(--interview);
+}
+
+.positive .arrow-right, .positive .menu-open-btn p {
+    color: var(--positive);
+}
+
+.refusal .arrow-right, .refusal .menu-open-btn p {
+    color: var(--refusal);
+}
+
+.submit-appeal .arrow-right, .submit-appeal .menu-open-btn p {
+    color: var(--submit-appeal);
+}
+
+.appeal-hearing .arrow-right, .appeal-hearing .menu-open-btn p {
+    color: var(--appeal-hearing);
+}
+*/
+.arrow-right.rotate, .arrow-down.rotate {
+    -moz-transform: rotate(-9deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    padding-left: 0;
+}
+
+.menu-open-btn .fa-arrow-circle-down {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .menu-open-btn .fa-arrow-circle-right {
+        display: none;
+    }
+    .menu-open-btn .fa-arrow-circle-down {
+        display: block;
+    }
+}
+
+.menu-open-btn:hover {
+    cursor: pointer;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--off-white);
+    min-width: 360px;
+    min-height: 100vh;
+    padding: 30px;
+    transform: translateX(-375px);
+    transition: transform 0.5s ease-in-out;
+    z-index: 2;
+    -webkit-box-shadow: 3px 6px 3px 0px rgba(209, 209, 209, 0.53);
+    -moz-box-shadow: 3px 6px 3px 0px rgba(209, 209, 209, 0.53);
+    box-shadow: 3px 6px 3px 0px rgba(209, 209, 209, 0.53);
+}
+
+.nav-item-container {
+    margin-bottom: 1rem;
+}
+
+.nav-item {
+    padding: 15px 5px;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    height: 50px;
+    width: 300px;
+    line-height: 1.3rem;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+    .navp-item {
+        padding: 5px 5px;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        height: 35px;
+        width: 250px;
+        line-height: 1.5rem;
+        margin-bottom: 3px;
+        border-radius: 5px;
+    }
+    .nav-item-container {
+        margin-bottom: .5rem;
+    }
+}
+/* - now set thru WP
+.nav-item-1 {
+    background-color: var(--asylum);
+}
+
+.nav-item-2 {
+    background-color: var(--welfare);
+}
+
+.nav-item-3 {
+    background-color: var(--local);
+}
+
+.nav-item-4 {
+    background-color: var(--evidence);
+}
+
+.nav-item-5 {
+    background-color: var(--interview);
+}
+
+.nav-item-6 {
+    background-color: var(--positive);
+}
+
+.nav-item-7 {
+    background-color: var(--refusal);
+}
+
+.nav-item-8 {
+    background-color: var(--submit-appeal);
+}
+
+.nav-item-9 {
+    background-color: var(--appeal-hearing);
+}
+.nav-item-10 {
+    background-color: var(--appeal-hearing);
+}
+.nav-item-11 {
+    background-color: var(--appeal-hearing);
+}
+.nav-item-12 {
+    background-color: var(--appeal-hearing);
+}
+*/
+.show {
+    transform: translateX(0);
+}
+
+/*=== wider slide-in main nav on small devices ===*/
+
+@media (max-width: 800px) {
+    .menu-open-btn {
+        width: 100px;
+        height: 40px;
+        padding: 5px 0 0 5px;
+        position: absolute;
+        top: 99%;
+        left: 35%;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--off-white);
+        min-width: 100%;
+        min-height: 100vh;
+        padding: 30px;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out;
+        z-index: 2;
+    }
+    .show {
+        transform: translateY(-5%);
+    }
+}
+
+/*nav items*/
+
+.nav-container {
+    margin-bottom: 2rem;
+    margin-left: 10px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+    .nav-container {
+        margin-bottom: 2rem;
+        margin-left: 0;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+}
+
+.nav-item {
+    padding: 15px 5px;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    width: 300px;
+    line-height: 1rem;
+    text-transform: capitalize;
+}
+
+/*
+.nav-item-1, .nav-item-2, .nav-item-3, .nav-item-4, .nav-item-5, .nav-item-6, .nav-item-7, .nav-item-8 {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #FA9A06;
+    border-bottom: 1px dashed #F3C98A;
+}
+*/
+
+.home-btn img {
+    max-width: 70px;
+}
+
+/*=========== PAGES ===========================================================*/
+
+/*=== general/site-wide ===*/
+
+.next-btn-container {
+    padding-bottom: 2rem;
+    margin: 3rem 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+/*=== HOME ===*/
+
+.container.home {
+    margin-top: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+/*
+.underline {
+    border-top: 2px solid #fff;
+    margin-top: 10px;
+}*/
+
+.home p {
+    max-width: 60%;
+    font-size: var(--p-large);
+    line-height: 1.6rem;
+}
+
+.home a {
+    color: #fff;
+}
+
+.home a:hover {
+    color: var(--blue-hover);
+}
+
+/*-- illustration --*/
+
+.home p:nth-of-type(1) {
+    font-family: 'Amatic SC', cursive;
+}
+
+@media (max-width: 500px) {
+    .home p {
+        font-size: var(--p-large-mobile);
+    }
+}
+
+.logo-img {
+    margin-bottom: 3rem;
+}
+
+.ellipse {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
+    max-width: 30%;
+}
+
+/*=== animated scroll button ===*/
+
+/*font awsome version*/
+
+.more-btn {
+    font-size: 2.5rem;
+    opacity: .3;
+    color: #666;
+}
+
+/*==== OVERVIEW ===*/
+
+.overview-section {
+    /*background-image: url(https://rcopestake65.github.io/right_to_remain_dev/images/walking-man-4.png), url(https://rcopestake65.github.io/right_to_remain_dev/images/walking-women.png);
+    background-repeat: no-repeat;
+    background-position: 10% center, 90% 45%;*/
+    position: relative;
+}
+
+.illustration-1, .illustration-2 {
+    position: absolute;
+}
+
+.illustration-1 {
+    top: 25%;
+    left: 10%;
+}
+
+.illustration-2 {
+    top: 25%;
+    right: 10%;
+}
+
+@media (max-width: 800px) {
+    .illustration-2 {
+        display: none;
+    }
+    .illustration-1 {
+        top: 25%;
+        left: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .illustration-1 {
+        display: none;
+    }
+}
+
+.container.overview {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 1000px) {
+    .overview-section {
+        background-position: left center, right 40%;
+    }
+}
+
+@media (max-width: 800px) {
+    .overview-section {
+        background-image: none;
+    }
+}
+
+.overview h3 {
+    font-size: 2rem;
+}
+
+.overview .next-btn-container {
+    margin-top: 2rem;
+}
+
+.overview a:hover {
+    color: var(--blue-hover);
+}
+
+@media (max-width: 500px) {
+    .overview p {
+        font-size: var(--p-large-mobile);
+    }
+}
+
+/*Star Card*/
+
+.star-card {
+    text-align: center;
+}
+
+.star-card img {
+    max-height: 80px;
+    -webkit-box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.star-card a p {
+    font-size: .9rem;
+    text-transform: uppercase;
+    color: var(--blue-hover);
+}
+
+.star-card a:hover {
+    color: var(--orange);
+}
+
+/*=== CLAIM ASYLUM ===*/
+
+
+
+/*=== WELFARE INTERVIEW ===*/
+
+
+
+/*=== LOCAL AUTHORITY CARE ===*/
+
+
+
+/*=== EVIDENCE FORM ===*/
+
+
+
+/*=== SUBSTANTIVE INTERVIEW ===*/
+
+
+
+/*=== HOME OFFICE POSITIVE DECISION ===*/
+
+
+
+/*=== HOME OFFICE REFUSAL ===*/
+
+
+
+/*=== SUBMIT APPEAL ===*/
+
+
+
+/*=== APPEAL HEARING ===*/
+
+
+
+/*=== PROBLEMS & ACTIONS ====*/
+
+.problem-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.card-container {
+    width: 338px;
+    height: 475px;
+    margin-right: 10px;
+    position: relative;
+    padding: 20px;
+}
+
+.card-heading {
+    background-color: khaki;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    margin-bottom: 2rem;
+}
+
+.card-heading h4 {
+    color: var(--card-front);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.card-container p {
+    color: #fff;
+    font-size: 1.1rem;
+    width: 80%;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 338px;
+    height: 475px;
+    background-color: var(--card-front);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    -webkit-box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    border: 20px solid #FFFFF0;
+    border-radius: 10px;
+}
+/* now setthru WP
+.claim-asylum .card-front {
+    background-color: var(--asylum);
+}
+
+.welfare-interview .card-front {
+    background-color: var(--welfare);
+}
+
+.local .card-front {
+    background-color: var(--local);
+}
+
+.evidence .card-front {
+    background-color: var(--evidence);
+}
+
+.interview .card-front {
+    background-color: var(--interview);
+}
+
+.positive .card-front {
+    background-color: var(--positive);
+}
+
+.refusal .card-front {
+    background-color: var(--refusal);
+}
+
+.submit-appeal .card-front {
+    background-color: var(--submit-appeal);
+}
+
+.appeal-hearing .card-front {
+    background-color: var(--appeal-hearing);
+}
+*/
+.card-back {
+    background-color: var(--card-back);
+}
+
+.card-full-inner {
+    width: 80%;
+}
+
+.card-full ul {
+    color: #fff;
+}
+
+.read-more-btn {
+    cursor: pointer;
+    color: #fff;
+    align-self: center;
+    padding: 2px 15px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    transition: all .3s ease-in-out;
+    z-index: 100;
+    border: 1px solid #fff;
+    margin-right: 3px;
+    border-radius: 5px;
+}
+
+.read-more-btn:hover {
+    color: var(--blue-hover);
+    background-color: #fff;
+}
+
+
+
+/*positioning grid items for large screens*/
+
+@media (min-width: 500px) {
+  .card-grid-item-1 {
+        grid-row: 1;
+        grid-column: 1 / 1;
+    }
+  .card-grid-item-2 {
+        grid-row: 1;
+        grid-column: 2 / -1;
+    }
+    .card-grid-item-3 {
+        grid-row: 2;
+        grid-column: 1 / 1;
+    }
+    .card-grid-item-4 {
+        grid-row: 2;
+        grid-column: 2 / -1;
+    }
+    .card-grid-item-5 {
+        grid-row: 3;
+        grid-column: 1 / 1;
+    }
+    .card-grid-item-6 {
+        grid-row: 3;
+        grid-column: 2 / -1;
+    }
+    .card-grid-item-7 {
+        grid-row: 4;
+        grid-column: 1 / 1;
+    }
+    .card-grid-item-8 {
+        grid-row: 4;
+        grid-column: 2 / -1;
+    }
+    .card-grid-item-9 {
+        grid-row: 5;
+        grid-column: 1 / 1;
+    }
+    .card-grid-item-10 {
+        grid-row: 5;
+        grid-column: 2 / -1;
+    }
+   .card-full-1, .card-full-2{
+       grid-row: 1;
+       grid-column: 1 / -1;
+   }
+   .card-full-3, .card-full-4{
+    grid-row: 2;
+    grid-column: 1 / -1;
+}
+.card-full-5, .card-full-6{
+    grid-row: 3;
+    grid-column: 1 / -1;
+}
+.card-full-7, .card-full-8{
+    grid-row: 4;
+    grid-column: 1 / -1;
+}
+.card-full-9, .card-full-10{
+    grid-row: 5;
+    grid-column: 1 / -1;
+}
+}
+
+/*positioning grid items for small screens*/
+
+@media (max-width: 500px) {
+    .card-grid-item-1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .card-grid-item-2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .card-grid-item-3 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .card-grid-item-4 {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .card-grid-item-5 {
+        grid-column: 1;
+        grid-row: 5;
+    }
+    .card-grid-item-6 {
+        grid-column: 1;
+        grid-row: 6;
+    }
+    .card-grid-item-7 {
+        grid-column: 1;
+        grid-row: 7;
+    }
+    .card-grid-item-8 {
+        grid-column: 1;
+        grid-row: 8;
+    }
+    .card-grid-item-9 {
+        grid-column: 1;
+        grid-row: 9;
+    }
+    .card-grid-item-10 {
+        grid-column: 1;
+        grid-row: 10;
+    }
+
+
+    .card-full-1 {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+    .card-full-2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .card-full-3 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .card-full-4 {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .card-full-5 {
+        grid-column: 1;
+        grid-row: 5;
+    }
+    .card-full-6 {
+        grid-column: 1;
+        grid-row: 6;
+    }
+    .card-full-7 {
+        grid-column: 1;
+        grid-row: 7;
+    }
+    .card-full-8 {
+        grid-column: 1;
+        grid-row: 8;
+    }
+    .card-full-9 {
+        grid-column: 1;
+        grid-row: 9;
+    }
+    .card-full-10 {
+        grid-column: 1;
+        grid-row: 10;
+    }
+
+
+}
+
+.card-full {
+    background-color: var(--card-back);
+    border: 20px solid #FFFFF0;
+    border-radius: 10px;
+    width: 100%;
+    display: none;
+    -webkit-box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    top: 20px;
+    position: relative;
+}
+
+.card-full {
+    color: #fff;
+    font-size: 1.1rem;
+    z-index: 100;
+}
+
+.card-full p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.card-full-close-btn {
+    color: var(--card-back);
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    left: 0;
+    padding-left: 5px;
+    padding-top: 2px;
+}
+
+.card-full-close-btn:hover {
+    color: var(--blue-hover);
+}
+
+.flip-btn, .flip-btn-back {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+/*small screen adjustments*/
+
+@media (max-width: 500px) {
+    .problem-container {
+        grid-template-columns: 1fr;
+    }
+    .card-container {
+        width: 290px;
+        height: 475px;
+        padding: 0;
+    }
+    .card-front, .card-back {
+        width: 290px;
+        height: 475px
+    }
+    .card-full {
+        top: 0;
+        position: relative;
+    }
+}
+
+/*=== STAR CARDS ===*/
+
+
+
+/*card menu*/
+
+.card-menu {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    justify-items: center;
+}
+/*-- positioning the cards on the grid - large screen--*/
+.card-btn-1{
+    grid-column: 1;
+    grid-row: 1;
+}
+.card-btn-2{
+    grid-column: 2;
+    grid-row: 1;
+}
+.card-btn-3{
+    grid-column: 3;
+    grid-row: 1;
+}
+.card-btn-4{
+    grid-column: 1;
+    grid-row: 2;
+}
+.card-btn-5{
+    grid-column: 2;
+    grid-row: 2;
+}
+.card-btn-6{
+    grid-column: 3;
+    grid-row: 2;
+}
+.card-btn-7{
+    grid-column: 1;
+    grid-row: 3;
+}
+.card-btn-8{
+    grid-column: 2;
+    grid-row: 3;
+}
+.card-btn-9{
+    grid-column: 3;
+    grid-row: 3;
+}
+.card-btn-10{
+    grid-column: 1;
+    grid-row: 4;
+}
+.card-btn-11{
+    grid-column: 2;
+    grid-row: 4;
+}
+.card-btn-12{
+    grid-column: 3;
+    grid-row: 4;
+}
+.card-btn-13{
+    grid-column: 1;
+    grid-row: 5;
+}
+.card-btn-14{
+    grid-column: 2;
+    grid-row: 5;
+}
+.card-btn-15{
+    grid-column: 3;
+    grid-row: 5;
+}
+.card-1, .card-2, .card-3 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+.card-4, .card-5, .card-6 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+.card-7, .card-8, .card-9 {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+.card-10, .card-11, .card-12 {
+    grid-column: 1 / -1;
+    grid-row: 4;
+}
+.card-13, .card-14, .card-15 {
+    grid-column: 1 / -1;
+    grid-row: 5;
+}
+
+@media (max-width: 800px){
+    .card-menu {
+        grid-template-columns: 1fr 1fr;
+    }
+    /*-- positioning the cards on the grid - medium screen--*/
+.card-btn-1{
+    grid-column: 1;
+    grid-row: 1;
+}
+.card-btn-2{
+    grid-column: 2;
+    grid-row: 1;
+}
+.card-btn-3{
+    grid-column: 1;
+    grid-row: 2;
+}
+.card-btn-4{
+    grid-column: 2;
+    grid-row: 2;
+}
+.card-btn-5{
+    grid-column: 1;
+    grid-row: 3;
+}
+.card-btn-6{
+    grid-column: 2;
+    grid-row: 3;
+}
+.card-btn-7{
+    grid-column: 1;
+    grid-row: 4;
+}
+.card-btn-8{
+    grid-column: 2;
+    grid-row: 4;
+}
+.card-btn-9{
+    grid-column: 1;
+    grid-row: 5;
+}
+.card-btn-10{
+    grid-column: 2;
+    grid-row: 5;
+}
+.card-btn-11{
+    grid-column: 1;
+    grid-row: 6;
+}
+.card-btn-12{
+    grid-column: 2;
+    grid-row: 6;
+}
+.card-btn-13{
+    grid-column: 1;
+    grid-row: 7;
+}
+.card-btn-14{
+    grid-column: 2;
+    grid-row: 7;
+}
+.card-btn-15{
+    grid-column: 1;
+    grid-row: 8;
+}
+.card-1, .card-2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+.card-3, .card-4 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+.card-5, .card-6 {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+.card-7, .card-8 {
+    grid-column: 1 / -1;
+    grid-row: 4;
+}
+.card-9, .card-10 {
+    grid-column: 1 / -1;
+    grid-row: 5;
+}
+.card-11, .card-12 {
+    grid-column: 1 / -1;
+    grid-row: 6;
+}
+.card-13, .card-14 {
+    grid-column: 1 / -1;
+    grid-row: 7;
+}
+.card-15 {
+    grid-column: 1 / -1;
+    grid-row: 8;
+}
+}
+@media (max-width:600px){
+    .card-menu {
+        grid-template-columns: 1fr;
+    }
+        /*-- positioning the cards on the grid - small screen--*/
+.card-btn-1{
+    grid-column: 1;
+    grid-row: 1;
+}
+.card-btn-2{
+    grid-column: 1;
+    grid-row: 2;
+}
+.card-btn-3{
+    grid-column: 1;
+    grid-row: 3;
+}
+.card-btn-4{
+    grid-column: 1;
+    grid-row: 4;
+}
+.card-btn-5{
+    grid-column: 1;
+    grid-row: 5;
+}
+.card-btn-6{
+    grid-column: 1;
+    grid-row: 6;
+}
+.card-btn-7{
+    grid-column: 1;
+    grid-row: 7;
+}
+.card-btn-8{
+    grid-column: 1;
+    grid-row: 8;
+}
+.card-btn-9{
+    grid-column: 1;
+    grid-row: 9;
+}
+.card-btn-10{
+    grid-column: 1;
+    grid-row: 10;
+}
+.card-btn-11{
+    grid-column: 1;
+    grid-row: 11;
+}
+.card-btn-12{
+    grid-column: 1;
+    grid-row: 12;
+}
+.card-btn-13{
+    grid-column: 1;
+    grid-row: 13;
+}
+.card-btn-14{
+    grid-column: 1;
+    grid-row: 14;
+}
+.card-btn-15{
+    grid-column: 1;
+    grid-row: 15;
+}
+.card-1 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+.card-2 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+.card-3 {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+.card-4 {
+    grid-column: 1 / -1;
+    grid-row: 4;
+}
+.card-5 {
+    grid-column: 1 / -1;
+    grid-row: 5;
+}
+.card-6 {
+    grid-column: 1 / -1;
+    grid-row: 6;
+}
+.card-7 {
+    grid-column: 1 / -1;
+    grid-row: 7;
+}
+.card-8 {
+    grid-column: 1 / -1;
+    grid-row: 8;
+}
+.card-9 {
+    grid-column: 1 / -1;
+    grid-row: 9;
+}
+.card-10 {
+    grid-column: 1 / -1;
+    grid-row: 10;
+}
+.card-11 {
+    grid-column: 1 / -1;
+    grid-row: 11;
+}
+
+.card-12 {
+    grid-column: 1 / -1;
+    grid-row: 12;
+}
+.card-13 {
+    grid-column: 1 / -1;
+    grid-row: 13;
+}
+.card-14 {
+    grid-column: 1 / -1;
+    grid-row: 14;
+}
+.card-15 {
+    grid-column: 1 / -1;
+    grid-row: 15;
+}
+}
+.card-menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+    border-radius: 8px;
+    width: 152px;
+    -webkit-box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+}
+
+.card-btn {
+    cursor: pointer;
+}
+
+/*
+.card-btn-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.card-btn-2 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.card-btn-3 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.card-btn-4 {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.card-btn-5 {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.card-btn-6 {
+    grid-column: 1;
+    grid-row: 6;
+}
+
+.card-btn-7 {
+    grid-column: 1;
+    grid-row: 7;
+}
+
+.card-btn-8 {
+    grid-column: 1;
+    grid-row: 8;
+}
+
+.card-btn-9 {
+    grid-column: 1;
+    grid-row: 9;
+}
+
+.card-btn-10 {
+    grid-column: 1;
+    grid-row: 10;
+}
+
+.card-btn-11 {
+    grid-column: 1;
+    grid-row: 11;
+}
+
+.card-btn-12 {
+    grid-column: 1;
+    grid-row: 12;
+}
+
+.card-btn-13 {
+    grid-column: 1;
+    grid-row: 13;
+}
+*/
+
+.card-menu-item h5 {
+    max-width: 150px;
+    padding: 5px;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: .9rem;
+    text-align: center;
+}
+
+.card-menu-item a {
+    color: #000;
+}
+
+.card-menu-item-1, .card-menu-item-2, .card-menu-item-3, .card-menu-item-4, .card-menu-item-4, .card-menu-item-5, .card-menu-item-6, .card-menu-item-7, .card-menu-item-8, .card-menu-item-9, .card-menu-item-10, .card-menu-item-11, .card-menu-item-12, .card-menu-item-13 {
+    background-repeat: no-repeat;
+    background-size: 152px 212px;
+    min-height: 212px;
+    background-position: center;
+}
+
+.card-menu-item-1 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-01.png");
+}
+
+.card-menu-item-2 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-02.png");
+}
+
+.card-menu-item-3 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-03.png");
+}
+
+.card-menu-item-4 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-04.png");
+}
+
+.card-menu-item-5 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-05.png");
+}
+
+.card-menu-item-6 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-06.png");
+    ;
+}
+
+.card-menu-item-7 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-07.png");
+}
+
+.card-menu-item-8 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-08.png");
+}
+
+.card-menu-item-9 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-01.png");
+}
+
+.card-menu-item-10 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-02.png");
+}
+
+.card-menu-item-11 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-03.png");
+}
+
+.card-menu-item-12 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-04.png");
+}
+
+.card-menu-item-13 {
+    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-05.png");
+}
+
+.star-card-container {
+    position: relative;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--blue);
+    color: #fff;
+    width: 90%;
+    padding: 40px;
+    text-align: left;
+    border: 15px solid ivory;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+    /* bring your own prefixes 
+    transform: translate(-50%, -50%);*/
+    z-index: 20;
+}
+.card a{
+    color: #fff;
+    text-decoration: underline;
+}
+.card a:hover{
+    color: #ccb404;
+}
+@media (max-width: 500px) {
+    .card {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+
+
+
+.card-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/*card details styling*/
+
+.card-details {
+    color: #fff;
+}
+
+/*Media queries for cards*/
+
+@media (max-width: 500px) {
+    /* .card-1, .card-2 {
+        left: 0;
+        width: 90%;
+        padding: 20px;
+    }*/
+    .card-show {
+        min-height: auto;
+    }
+}
+
+/*=== FOOTER ===*/
+
+footer {
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 30%, rgba(43, 43, 43, 1) 52%, rgba(0, 0, 0, 1) 70%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
