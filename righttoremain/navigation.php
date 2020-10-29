@@ -1,6 +1,6 @@
 <?php /* Template Name: Navigation */ ?>
 
-<!-- ========== MAIN MENU / HAMBURGER ================== -->
+
 <?php
     $asylum = get_field( "asylum", 151 );
     $welfare = get_field( "welfare", 151 );
@@ -81,7 +81,7 @@
         </div>
 
         <div class="star-card">
-            <a href=".star-cards">
+            <a href="star-cards">
                 <img src="https://rcopestake65.github.io/right_to_remain_dev/images/star-card-sm-01.png">
                 <p>Star Cards</p>
             </a>

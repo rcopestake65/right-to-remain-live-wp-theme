@@ -8,7 +8,7 @@
                     </div> -->
 <section>
     <div class="container home">
-        <img src="<?php the_field('logo'); ?>" />
+        <img class="logo" src="<?php the_field('logo'); ?>" />
         <h2><?php the_field('title'); ?></h2>
         <img class="face-01" src="<?php the_field('illustration'); ?>" />
 
