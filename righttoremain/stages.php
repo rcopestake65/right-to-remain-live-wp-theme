@@ -13,30 +13,30 @@ if( have_posts() ) :
         the_post(); ?>
 
 
+<div class="bg-colour" style="background-color:<?php the_field('background_colour'); ?>">
 
+    <section class="stages">
 
-<section class="stages">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-grid-item grid-item-1">
+                    <h2 style="color:<?php the_field('background_colour'); ?>"><?php the_title(); ?></h2>
+                    <?php the_content(); ?>
 
-    <div class="container">
-        <div class="intro-grid">
-            <div class="intro-grid-item grid-item-1">
-                <h2 style="color:<?php the_field('background_colour'); ?>"><?php the_title(); ?></h2>
-                <?php the_content(); ?>
+                </div>
+                <div class="intro-grid-item grid-item-2">
+                    <img class="face" src="<?php the_field('illustration'); ?>">
+                </div>
 
             </div>
-            <div class="intro-grid-item grid-item-2">
-                <img class="face" src="<?php the_field('illustration'); ?>">
-            </div>
-
-        </div>
 
 
-        <!-- ===== PROBLEMS & ACTIONS ====-->
-        <h4 style="color:<?php the_field('background_colour'); ?>">Problems &amp; Actions</h4>
+            <!-- ===== PROBLEMS & ACTIONS ====-->
+            <h4 style="color:<?php the_field('background_colour'); ?>">Problems &amp; Actions</h4>
 
-        <div class="problem-container">
+            <div class="problem-container">
 
-            <?php if( have_rows('cards')) : while (have_rows('cards')) : the_row();
+                <?php if( have_rows('cards')) : while (have_rows('cards')) : the_row();
             $problemNumber = get_sub_field('problem_number');
             $problemText = get_sub_field('problem');
             $actionNumber = get_sub_field('action_number');
@@ -44,29 +44,30 @@ if( have_posts() ) :
             $actionFull = get_sub_field('action_full');
             ?>
 
-            <!-- Problem -->
-            <div class="card-container card-grid-item-<?php echo get_row_index(); ?>">
-                <div class="card-front" style="background-color:<?php the_field('background_colour'); ?>">
-                    <div class="card-heading">
-                        <h4 style="color:<?php the_field('background_colour'); ?>">
-                            Problem <?php echo get_row_index(); ?></h4>
+                <!-- Problem -->
+                <div class="card-container card-grid-item-<?php echo get_row_index(); ?>">
+                    <div class="card-front" style="background-color:<?php the_field('background_colour'); ?>">
+                        <div class="card-heading">
+                            <h4 style="color:<?php the_field('background_colour'); ?>">
+                                Problem <?php echo get_row_index(); ?></h4>
 
+                        </div>
+
+                        <p> <?php echo $problemText; ?></p>
+                        <div class="flip-btn">
+                            <img src="https://rcopestake65.github.io/right_to_remain_dev/images/flip-icon.png" alt="">
+                        </div>
                     </div>
-
-                    <p> <?php echo $problemText; ?></p>
-                    <div class="flip-btn">
-                        <img src="https://rcopestake65.github.io/right_to_remain_dev/images/flip-icon.png" alt="">
-                    </div>
-                </div>
-                <div class="card-back" style="background-color:<?php the_field('card_back'); ?>">
-                    <div class="card-heading">
-                        <h4 style="color:<?php the_field('card_back'); ?>">Action <?php echo get_row_index(); ?></h4>
-                    </div>
-                    <p><?php echo $actionText; ?></p>
+                    <div class="card-back" style="background-color:<?php the_field('card_back'); ?>">
+                        <div class="card-heading">
+                            <h4 style="color:<?php the_field('card_back'); ?>">Action <?php echo get_row_index(); ?>
+                            </h4>
+                        </div>
+                        <p><?php echo $actionText; ?></p>
 
 
 
-                    <?php 
+                        <?php 
     
     if ($actionFull) {
         echo '<div class="read-more-btn read-more-btn-'?><?php echo get_row_index();?>"<?php echo'>Read More</div>';
@@ -74,50 +75,50 @@ if( have_posts() ) :
                 ?>
 
 
-                    <div class="flip-btn-back">
-                        <img src="https://rcopestake65.github.io/right_to_remain_dev/images/flip-back.png" alt="">
+                        <div class="flip-btn-back">
+                            <img src="https://rcopestake65.github.io/right_to_remain_dev/images/flip-back.png" alt="">
+                        </div>
+
                     </div>
 
                 </div>
+                <!-- Problem FULL -->
+                <div class="card-full card-full-<?php echo get_row_index(); ?>"
+                    style="background-color:<?php the_field('card_back'); ?>">
 
-            </div>
-            <!-- Problem FULL -->
-            <div class="card-full card-full-<?php echo get_row_index(); ?>"
-                style="background-color:<?php the_field('card_back'); ?>">
-
-                <div class="card-heading">
-                    <h4>Action <?php echo get_row_index(); ?></h4>
-                </div>
-                <div class="card-full-inner">
-                    <?php echo $actionFull; ?>
-
-                    <div class="card-full-close-btn card-full-close-btn-<?php echo get_row_index(); ?>"
-                        style="color:<?php the_field('card_back'); ?>">
-                        <i class="fas fa-window-close fa-2x"></i>
+                    <div class="card-heading">
+                        <h4>Action <?php echo get_row_index(); ?></h4>
                     </div>
-                </div>
+                    <div class="card-full-inner">
+                        <?php echo $actionFull; ?>
 
-            </div><!-- close card-full -->
+                        <div class="card-full-close-btn card-full-close-btn-<?php echo get_row_index(); ?>"
+                            style="color:<?php the_field('card_back'); ?>">
+                            <i class="fas fa-window-close fa-2x"></i>
+                        </div>
+                    </div>
+
+                </div><!-- close card-full -->
 
 
 
 
 
 
-            <?php endwhile; endif; ?>
-        </div><!-- end problem container -->
+                <?php endwhile; endif; ?>
+            </div><!-- end problem container -->
 
 
-        <!-- 
+            <!-- 
         <div class="next-btn-container">
             <a href="#"><span class="more-btn"><i class="fas fa-arrow-circle-down"></i></span></a>
         </div> -->
 
-    </div><!-- end .container -->
+        </div><!-- end .container -->
 
 
-</section><!-- end claim asylum -->
-
+    </section><!-- end claim asylum -->
+</div><!-- end bg-colour -->
 <?php endwhile;
     endif;
     ?>

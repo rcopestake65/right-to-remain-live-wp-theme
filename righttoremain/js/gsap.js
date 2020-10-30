@@ -152,19 +152,41 @@ if(overview || stages || starCards || fun){
 
 const stagesHeader = document.querySelector(".stages h2");
 const stagesImage = document.querySelector(".stages img.face");
+const starHeader = document.querySelector(".star-cards h2");
+const starImage = document.querySelector(".star-cards img.face");
 
 if(stagesHeader){
-  gsap.set(".stages h2", { opacity: 0, x: -50, borderBottom: 0 });
-  gsap.to(".stages h2", { duration: 1, x: 0, y: 0, opacity: 1, delay: 0.1 });
+  gsap.set(stagesHeader, { opacity: 0, x: -50, borderBottom: 0 });
+  gsap.to(stagesHeader, { duration: 1, x: 0, y: 0, opacity: 1, delay: 0.1 });
 }
 if(stagesImage){
-  gsap.set(".stages img.face", { opacity: 0, x: -50, borderBottom: 0 });
-  gsap.to(".stages img.face", {duration: 1, x: 0, y: 0, opacity: 1, delay: 0.1,});
+  gsap.set(stagesImage, { opacity: 0, x: -50, borderBottom: 0 });
+  gsap.to(stagesImage, {duration: 1, x: 0, y: 0, opacity: 1, delay: 0.1,});
+}
+if(starHeader){
+  gsap.set(starHeader, { opacity: 0, x: -50, borderBottom: 0 });
+  gsap.to(starHeader, { duration: 1, x: 0, y: 0, opacity: 1, delay: 0.1 });
+}
+if(starImage){
+  gsap.set(starImage, { opacity: 0, x: -50, borderBottom: 0 });
+  gsap.to(starImage, {duration: 1, x: 0, y: 0, opacity: 1, delay: 0.1,});
 }
 
+//backround colour drops down from the top
+const bgColour = document.querySelector(".bg-colour");
+if(bgColour){
+  gsap.set(bgColour, {height: '0'});
+  gsap.to(bgColour, { duration: 1, delay: 0.5, top: 0, left: 0, height: 'auto', ease:Linear.easeNone});
+}
 
-
-
+//cards animate
+const card = document.querySelectorAll(".card-container");
+if(card){
+  $.each($(card), function (i, element) {
+  gsap.set(card, { opacity: 0, scaleX: 0, scaleY: 0 });
+  gsap.to(card, {duration: 1, scaleX: 1, scaleY: 1, opacity: 1, delay: 0.1,});
+})
+}
 
 // ========== PROBLEMS & ACTIONS  ======================
 

@@ -21,7 +21,7 @@ if( have_posts() ) :
                 <?php the_content(); ?>
             </div>
             <div class="intro-grid-item grid-item-2">
-                <img class="face" src="https://rcopestake65.github.io/right_to_remain_dev/images/social-worker-03.png">
+                <img class="face" src="<?php the_field('illustration'); ?>">
             </div>
         </div><!-- end intro-grid -->
 

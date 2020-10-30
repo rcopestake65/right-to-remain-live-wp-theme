@@ -82,11 +82,17 @@
 
         <div class="star-card">
             <a href="star-cards">
-                <img src="https://rcopestake65.github.io/right_to_remain_dev/images/star-card-sm-01.png">
+                <img src="/wp-content/uploads/star-card-sm-01.png">
+                <p>Star Cards</p>
+            </a>
+            <a href="star-cards">
+                <img src="/wp-content/uploads/star-card-sm-01.png">
                 <p>Star Cards</p>
             </a>
         </div>
+
     </div>
+
 
 </nav>
 

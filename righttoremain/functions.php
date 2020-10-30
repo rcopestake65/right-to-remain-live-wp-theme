@@ -27,8 +27,9 @@ function loadjs()
     wp_register_script('menu', get_template_directory_uri() . '/js/sliding-menus.js', '', 1, true);
     wp_enqueue_script('menu');
 
-    // wp_register_script('accordion', get_template_directory_uri() . '/js/accordion.js', '', 1, true);
-    // wp_enqueue_script('accordion');
+    wp_register_script('my-accordion', get_template_directory_uri() . '/js/my-accordion.js', '', 1, true);
+    wp_enqueue_script('my-accordion');
+    
 
     wp_register_script( 'jQuery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js', null, null, false );
     wp_enqueue_script('jQuery');

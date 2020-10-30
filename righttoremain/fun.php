@@ -33,12 +33,27 @@ if( have_posts() ) :
                 <img src="<?php echo $image; ?>" alt="">
             </div>
             <div class="grid-item grid-item-2" style="background-color:<?php echo $textBackgroundColour; ?>;">
-                <h3><?php echo $heading; ?></h3>
-                <?php echo $text; ?>
+
+                <div class="accordion js-accordion">
+                    <div class="accordion__item js-accordion-item">
+                        <div class="accordion-header js-accordion-header">
+                            <h4><?php echo $heading; ?> <i class="fas fa-arrow-circle-down"></i></h4>
+                        </div>
+                        <div class="accordion-body js-accordion-body">
+                            <div class="accordion-body__contents">
+                                <?php echo $text; ?>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
         </div>
         <?php endwhile; endif; ?>
+    </div>
 </section><!-- end fun -->
 
 <?php endwhile;

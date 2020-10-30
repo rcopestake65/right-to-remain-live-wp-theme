@@ -9,4 +9,4 @@
     <title>Right to Remain - Asylum Journey</title>
 </head>
 
-<body <?php body_class();?> style="background-color:<?php the_field('background_colour'); ?>">
+<body <?php body_class();?>>

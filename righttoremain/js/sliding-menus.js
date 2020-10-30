@@ -11,7 +11,7 @@ document.querySelector('.menu-open-btn').addEventListener('click', () => documen
 //close
 //document.querySelector('.menu-close-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
 
-//close main-menu if any problems btn clicked
+//close main-menu if any other btn clicked
 document.querySelector('.flip-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
 document.querySelector('.flip-btn-back').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
 document.querySelector('.read-more-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
