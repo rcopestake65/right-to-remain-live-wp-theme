@@ -32,11 +32,13 @@ if( have_posts() ) :
 
 
             <!-- ===== PROBLEMS & ACTIONS ====-->
-            <h4 style="color:<?php the_field('background_colour'); ?>">Problems &amp; Actions</h4>
+			<?php if( have_rows('cards')): ?>
+				<h4 style="color:<?php the_field('background_colour'); ?>">Problems &amp; Actions</h4>
+			<?php endif; ?>
 
             <div class="problem-container">
 
-                <?php if( have_rows('cards')) : while (have_rows('cards')) : the_row();
+            <?php if( have_rows('cards')) : while (have_rows('cards')) : the_row();
             $problemNumber = get_sub_field('problem_number');
             $problemText = get_sub_field('problem');
             $actionNumber = get_sub_field('action_number');
