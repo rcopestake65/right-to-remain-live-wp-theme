@@ -54,10 +54,10 @@ if(overview || stages || starCards || fun){
   gsap.to(".star-card", { duration: 2, x: 0, y: 0, opacity: 1, delay: 0.3 });
   
   gsap.set(
-    [".nav-item-1", ".nav-item-3", ".nav-item-5", ".nav-item-7", ".nav-item-9"],
+    [".nav-item-1", ".nav-item-3", ".nav-item-5", ".nav-item-7", ".nav-item-9", ".nav-item-11"],
     { x: -40, opacity: 0 }
   );
-  gsap.set([".nav-item-2", ".nav-item-4", ".nav-item-6", ".nav-item-8"], {
+  gsap.set([".nav-item-2", ".nav-item-4", ".nav-item-6", ".nav-item-8", ".nav-item-10", ".nav-item-12"], {
     x: 40,
     opacity: 0,
   });
@@ -73,6 +73,9 @@ if(overview || stages || starCards || fun){
       ".nav-item-7",
       ".nav-item-8",
       ".nav-item-9",
+      ".nav-item-10",
+      ".nav-item-11",
+      ".nav-item-12"
     ],
     { duration: 1, x: 0, opacity: 1, ease: "power.inOut(1, 0.3)", autoAlpha: 1 }
   );
@@ -84,6 +87,10 @@ if(overview || stages || starCards || fun){
   gsap.to(".nav-item-6", { delay: 0.6 });
   gsap.to(".nav-item-7", { delay: 0.7 });
   gsap.to(".nav-item-8", { delay: 0.8 });
+  gsap.to(".nav-item-9", { delay: 0.9 });
+  gsap.to(".nav-item-10", { delay: 1 });
+  gsap.to(".nav-item-11", { delay: 1.1 });
+  gsap.to(".nav-item-12", { delay: 1.2 });
   
   //tab slide out btn
   gsap.set(".arrow-right", { opacity: 0.5 });

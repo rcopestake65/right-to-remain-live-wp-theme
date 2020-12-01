@@ -31,15 +31,20 @@
 
 <nav class="main-nav">
     <div class="menu-open-btn">
-        <p style="color:<?php the_field('background_colour'); ?>">Stages<i
-                style="color:<?php the_field('background_colour'); ?>"
-                class="fas fa-arrow-circle-right arrow-right fa-lg"></i></p>
+        <p style="color:<?php the_field('background_colour'); ?>">Stages
+            <i style="color:<?php the_field('background_colour'); ?>"
+                class="fas fa-arrow-circle-right arrow-right fa-lg"></i>
+            <i class="fas fa-arrow-circle-down arrow-down fa-lg"></i>
+        </p>
 
-        <i class="fas fa-arrow-circle-down arrow-down fa-lg"></i>
+
     </div>
 
     <div class="nav-container">
-        <a class="stage-btn home-btn" href="/"><img src="/wp-content/uploads/home-icon.png"></a>
+        <!-- <a class="stage-btn home-btn" href="/"><img src="/wp-content/uploads/home-icon.png"></a> -->
+        <div class="mobile-nav-close">
+            <i style="color:<?php echo $asylum; ?>" class="fas fa-times-circle fa-lg"></i>
+        </div>
 
         <div class="nav-item-container">
             <a href="/claim-asylum">
@@ -56,14 +61,17 @@
                 </div>
             </a>
             <a href="/statement-of-evidence-form">
-                <div class="nav-item nav-item-4" style="background-color:<?php echo $evidence; ?>">Evidence Form</div>
+                <div class="nav-item nav-item-4" style="background-color:<?php echo $evidence; ?>">Statement of Evidence
+                    Form</div>
             </a>
             <a href="/substantive-interview">
-                <div class="nav-item nav-item-5" style="background-color:<?php echo $substantive_interview; ?>">Substantive
+                <div class="nav-item nav-item-5" style="background-color:<?php echo $substantive_interview; ?>">
+                    Substantive
                     Interview</div>
             </a>
             <a href="/home-office-positive-decision">
-                <div class="nav-item nav-item-6" style="background-color:<?php echo $positive_decision; ?>">Home Office positive
+                <div class="nav-item nav-item-6" style="background-color:<?php echo $positive_decision; ?>">Home Office
+                    positive
                     decision</div>
             </a>
             <a href="/home-officere-refusal">
@@ -79,7 +87,8 @@
                 </div>
             </a>
             <a href="/possible-outcomes-after-appeal-hearing">
-                <div class="nav-item nav-item-10" style="background-color:<?php echo $possible_outcomes; ?>">Outcomes after
+                <div class="nav-item nav-item-10" style="background-color:<?php echo $possible_outcomes; ?>">Outcomes
+                    after
                     appeal hearing</div>
             </a>
             <a href="/fresh-claim">
@@ -91,7 +100,7 @@
             </a>
         </div>
 
-        <div class="star-card">
+        <!-- <div class="star-card">
             <a href="star-cards">
                 <img src="/wp-content/uploads/star-card-sm-01.png">
                 <p>Star Cards</p>
@@ -100,7 +109,7 @@
                 <img src="/wp-content/uploads/star-card-sm-01.png">
                 <p>Star Cards</p>
             </a>
-        </div>
+        </div> -->
 
     </div>
 

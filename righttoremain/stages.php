@@ -6,6 +6,10 @@
 <?php get_template_part( 'navigation');?>
 <!-- end menu -->
 
+<!-- ========== UTILITIES MENU ================== -->
+<?php get_template_part( 'utilities');?>
+<!-- end utlities menu -->
+
 <?php
 
 if( have_posts() ) :
@@ -17,7 +21,7 @@ if( have_posts() ) :
 
     <section class="stages">
 
-        <div class="container">
+        <div class="container pt2">
             <div class="intro-grid">
                 <div class="intro-grid-item grid-item-1">
                     <h2 style="color:<?php the_field('background_colour'); ?>"><?php the_title(); ?></h2>
@@ -32,13 +36,13 @@ if( have_posts() ) :
 
 
             <!-- ===== PROBLEMS & ACTIONS ====-->
-			<?php if( have_rows('cards')): ?>
-				<h4 style="color:<?php the_field('background_colour'); ?>">Problems &amp; Actions</h4>
-			<?php endif; ?>
+            <?php if( have_rows('cards')): ?>
+            <h4 style="color:<?php the_field('background_colour'); ?>">Problems &amp; Actions</h4>
+            <?php endif; ?>
 
             <div class="problem-container">
 
-            <?php if( have_rows('cards')) : while (have_rows('cards')) : the_row();
+                <?php if( have_rows('cards')) : while (have_rows('cards')) : the_row();
             $problemNumber = get_sub_field('problem_number');
             $problemText = get_sub_field('problem');
             $actionNumber = get_sub_field('action_number');
