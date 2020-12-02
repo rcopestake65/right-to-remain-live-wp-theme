@@ -43,7 +43,7 @@
     <div class="nav-container">
         <!-- <a class="stage-btn home-btn" href="/"><img src="/wp-content/uploads/home-icon.png"></a> -->
         <div class="mobile-nav-close">
-            <i style="color:<?php echo $asylum; ?>" class="fas fa-times-circle fa-lg"></i>
+            <i class="fas fa-times-circle fa-lg"></i>
         </div>
 
         <div class="nav-item-container">

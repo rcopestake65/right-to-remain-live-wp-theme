@@ -1,11 +1,7 @@
 // ============ HOME PAGE ===================
 
-//these opening variable declaration anf if statement check to see if we are on the home page before dealing with animations - not essential but saves whole load of warnings in the console - tidy boy!
-const home = document.querySelector(".home");
-
-if(home){
-  gsap.set(".logo", { opacity: 0, y: -50 });
-  gsap.to(".logo", { duration: 2, x: 0, y: 0, opacity: 1 });
+gsap.set(".logo", { opacity: 0, y: -50 });
+gsap.to(".logo", { duration: 2, x: 0, y: 0, opacity: 1 });
 
 gsap.set(".home h2", { opacity: 0, y: -50, borderBottom: 0 });
 gsap.to(".home h2", { duration: 2, x: 0, y: 0, opacity: 1, delay: 0.3 });
@@ -34,7 +30,7 @@ const tlshape = gsap.timeline({
 tlshape.from(".shape-1", { delay: 0.5, transformOrigin: "center" });
 tlshape.from(".shape-2", { delay: 0, transformOrigin: "center" });
 tlshape.from(".shape-3", { delay: 0, transformOrigin: "center" });
-}
+
 
 
 

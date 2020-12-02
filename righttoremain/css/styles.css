@@ -240,7 +240,7 @@ section {
     -moz-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    /* padding-left: 0; */
+     padding-left: 0; 
 }
 
 .menu-open-btn .fa-arrow-circle-down {
@@ -291,7 +291,8 @@ section {
     text-align: center;
     height: 50px;
     width: 300px;
-    line-height: 1.3rem;
+    line-height: 1rem;
+    text-transform: capitalize;
     margin-bottom: 3px;
     border-radius: 5px;
 }
@@ -336,6 +337,9 @@ section {
         justify-content: space-evenly;
         padding: 10px;
         cursor: pointer;
+        -webkit-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.1); 
+        -moz-box-shadow: 1px5px 5px 0px rgba(0,0,0,0.1);
+        box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.1);
     }
     .menu-open-btn p{
         margin-bottom: 0;
@@ -400,18 +404,6 @@ section {
     }
 }
 
-.nav-item {
-    padding: 15px 5px;
-    color: #fff;
-    text-align: center;
-    height: 50px;
-    width: 300px;
-    line-height: 1rem;
-    text-transform: capitalize;
-}
-
-
-
 .home-btn img {
     max-width: 70px;
 }
@@ -423,17 +415,17 @@ section {
     padding: 5px 0 0 5px;
     position: absolute;
     top: 10%;
-    right: 365px;
+    right: 360px;
     background-color: var(--off-white);
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     padding: 10px;
-    -webkit-box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:-5px 0px 5px 1px rgba(0,0,0,0.1);
+    box-shadow: -5px 0px 5px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: -5px 0px 5px 1px rgba(0,0,0,0.1);
 }
 /* .utilities-menu-open-btn p {
     display: none;
@@ -444,7 +436,7 @@ section {
         transform: rotate(90deg);
         display: block;
         text-align: center;
-        margin: 0 0 0 .1rem;
+        margin: 0 .5rem 0 0;
         text-transform: uppercase;
     }
     .utilities-menu-open-btn p i {
@@ -465,9 +457,9 @@ section {
 
 
 .arrow-left.utilities-rotate, .arrow-up.utilities-rotate {
-    -moz-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
     padding-right: 0;
 }
 
@@ -498,7 +490,7 @@ section {
 .utilities-nav {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     position: fixed;
     top: 0;
@@ -515,21 +507,21 @@ section {
     box-shadow: 3px 6px 3px 0px rgba(209, 209, 209, 0.53);
 }
 
-.utilities-nav-container {
-    margin-bottom: 2rem;
-    margin-left: 10px;
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
 
+.utility-nav-item{
+    background-color:rgb(89, 65, 239);
+    cursor: pointer;
+}
+.utility-nav-item a{
+    color: #fff;
+}
 .utilities-show {
     transform: translateX(0);
     z-index: 1;
 }
-
+.mobile-utilities-nav-close{
+    display: none;
+}
 
 /*=== wider slide-in main nav on small devices ===*/
 
@@ -548,11 +540,14 @@ section {
         justify-content: space-evenly;
         padding: 10px;
         cursor: pointer;
+        -webkit-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.1); 
+        -moz-box-shadow: 1px5px 5px 0px rgba(0,0,0,0.1);
+        box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.1);
     }
     .utilities-nav {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        /* justify-content: space-evenly; */
         align-items: center;
         position: absolute;
         top: 0;
@@ -572,10 +567,7 @@ section {
         align-items: center;
         justify-content: space-evenly;
     }
-    .utilities-nav-container {
-        margin-bottom:0;
-        margin-left: 0;
-    }
+
     .utilities-show {
         transform: translateY(0);
     }
@@ -585,6 +577,10 @@ section {
         transform: rotate(0);
         padding-right: 0;
     }
+    .mobile-utilities-nav-close{
+        display: block;
+        margin-bottom: .5rem;
+    }
 }
 /*=========== PAGES ===========================================================*/
 
@@ -592,7 +588,7 @@ section {
 
 .next-btn-container {
     padding-bottom: 2rem;
-    margin: 3rem 0 0 0;
+    margin: 0;
     display: flex;
     justify-content: center;
 }
@@ -666,9 +662,6 @@ section {
 /*==== OVERVIEW ===*/
 
 .overview-section {
-    /*background-image: url(https://rcopestake65.github.io/right_to_remain_dev/images/walking-man-4.png), url(https://rcopestake65.github.io/right_to_remain_dev/images/walking-women.png);
-    background-repeat: no-repeat;
-    background-position: 10% center, 90% 45%;*/
     position: relative;
 }
 
@@ -1500,7 +1493,7 @@ section {
     color: #000;
 }
 
-.card-menu-item-1, .card-menu-item-2, .card-menu-item-3, .card-menu-item-4, .card-menu-item-4, .card-menu-item-5, .card-menu-item-6, .card-menu-item-7, .card-menu-item-8, .card-menu-item-9, .card-menu-item-10, .card-menu-item-11, .card-menu-item-12, .card-menu-item-13 {
+.card-menu-item-1, .card-menu-item-2, .card-menu-item-3, .card-menu-item-4, .card-menu-item-4, .card-menu-item-5, .card-menu-item-6, .card-menu-item-7, .card-menu-item-8, .card-menu-item-9, .card-menu-item-10, .card-menu-item-11, .card-menu-item-12, .card-menu-item-13, .card-menu-item-14, .card-menu-item-15, .card-menu-item-16, .card-menu-item-17, .card-menu-item-18 {
     background-repeat: no-repeat;
     background-size: 152px 212px;
     min-height: 212px;
@@ -1508,58 +1501,72 @@ section {
 }
 
 .card-menu-item-1 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-01.png");
+    background-image: url("../images/playing-card-01.png");
 }
 
 .card-menu-item-2 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-02.png");
+    background-image: url("../images/playing-card-02.png");
 }
 
 .card-menu-item-3 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-03.png");
+    background-image: url("../images/playing-card-03.png");
 }
 
 .card-menu-item-4 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-04.png");
+    background-image: url("../images/playing-card-04.png");
 }
 
 .card-menu-item-5 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-05.png");
+    background-image: url("../images/playing-card-05.png");
 }
 
 .card-menu-item-6 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-06.png");
+    background-image: url("../images/playing-card-06.png");
     ;
 }
 
 .card-menu-item-7 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-07.png");
+    background-image: url("../images/playing-card-07.png");
 }
 
 .card-menu-item-8 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-08.png");
+    background-image: url("../images/playing-card-08.png");
 }
 
 .card-menu-item-9 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-01.png");
+    background-image: url("../images/playing-card-01.png");
 }
 
 .card-menu-item-10 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-02.png");
+    background-image: url("../images/playing-card-02.png");
 }
 
 .card-menu-item-11 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-03.png");
+    background-image: url("../images/playing-card-03.png");
 }
 
 .card-menu-item-12 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-04.png");
+    background-image: url("../images/playing-card-04.png");
 }
 
 .card-menu-item-13 {
-    background-image: url("https://rcopestake65.github.io/right_to_remain_dev/images/playing-card-05.png");
+    background-image: url("../images/playing-card-05.png");
 }
-
+.card-menu-item-14 {
+    background-image: url("../images/playing-card-01.png");
+}
+.card-menu-item-15 {
+    background-image: url("../images/playing-card-02.png");
+}
+.card-menu-item-16 {
+    background-image: url("../images/playing-card-03.png");
+}
+.card-menu-item-17 {
+    background-image: url("../images/playing-card-04.png");
+}
+.card-menu-item-18 {
+    background-image: url("../images/playing-card-05.png");
+}
 .star-card-container {
     position: relative;
     margin: 0 auto;
@@ -1619,137 +1626,10 @@ section {
         min-height: auto;
     }
 }
-/*=== FUN THINGS TO DO ===*/
+/*=== ABOUT PAGE ===*/
 
-.fun-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 70px 1fr;
-    margin-bottom: 2rem;
-}
-@media (max-width: 800px ){
-    .fun-grid{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        
-    } 
 
-}
-.fun-grid .grid-item-1{
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.fun-grid .grid-item-2{
-    grid-column: 1 / -1;
-    grid-row: 1 / 1;
-    color: #fff;
-    -webkit-box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 3px 6px 3px 0px rgba(0, 0, 0, 0.1);
-}
 
-/*accordion(https://codepen.io/LewisBriffa/pen/qjwqLb)*/
-
-.accordion {
-    font-size: 1rem;
-    margin: 0 auto;
-    border-radius: 5px;
-  }
-
-  /* .accordion-header,
-  .accordion-body {
-    background: white;
-  } */
-  
-  .accordion-header {
-    color: white;
-    cursor: pointer;
-    transition: all .3s;
-    text-transform: uppercase;
-    padding: 1rem;
-  }
-
-  .accordion__item .accordion__item {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
-  
-  .accordion-header:hover {
-    /* background: #2D3D99; */
-    position: relative;
-    z-index: 5;
-  }
-  
-  .accordion-body {
-    /* background: rgb(45,61,153, .8); */
-    color: #fff;
-    display: none;
-  }
-  .accordion-btn{
-    padding: 5px 10px;
-    background-color: var(--blue);
-    color: #fff;
-    border-radius: 5px;
-  }
-  .accordion-btn:hover{
-    background-color: var(--blue-hover);
-  }
-  .accordion-body__contents {
-    padding: 1.5em 1.5em;
-    background: rgb(45,61,153);
-  }
-  .accordion-body__contents a{
-      color: #fff;
-      text-decoration: underline;
-  }
-  .accordion-body__contents a:hover{
-      background-color: yellow;
-      color: var(--blue);
-      padding: 2px;
-      text-decoration: none;
-  }
-  .accordion-body__contents p{
-      font-size: 1rem;
-  }
-  .accordion__item.active:last-child .accordion-header {
-    border-radius: none;
-  }
-  
-  .accordion:first-child > .accordion__item > .accordion-header {
-    border-bottom: 1px solid transparent;
-  }
-  
-  .accordion__item > .accordion-header .fa-arrow-circle-down {
-    /* content: "\2193"; */
-    font-size: 1.2em;
-    float: right;
-    position: relative;
-    top: -2px;
-    transition: .3s all;
-    transform: rotate(0deg);
-  }
-  
-  .accordion__item.active > .accordion-header .fa-arrow-circle-down  {
-    transform: rotate(-180deg);
-  }
-  
-  .accordion__item.active .accordion-header {
-    background: #2D3D99;
-  }
-  
-  .accordion__item .accordion__item .accordion-header {
-    background: #f1f1f1;
-    color: #353535;
-  }
-  
-  @media screen and (max-width: 1000px) {
-  
-    .accordion {
-      width: 100%;
-    }
-  }
 
 /*=== FOOTER ===*/
 

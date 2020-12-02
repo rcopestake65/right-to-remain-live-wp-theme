@@ -20,10 +20,8 @@
     
 ?>
 <section class="overview-section">
-    <div class="illustration-1"><img src="https://rcopestake65.github.io/right_to_remain_dev/images/walking-man-4.png"
-            alt=""></div>
-    <div class="illustration-2"><img src="https://rcopestake65.github.io/right_to_remain_dev/images/walking-women.png"
-            alt=""></div>
+    <div class="illustration-1"><img src="/wp-content/uploads/walking-man-4.png" alt=""></div>
+    <div class="illustration-2"><img src="/wp-content/uploads/walking-women-v2.png" alt=""></div>
     <div class="container overview">
         <div class="next-btn-container">
             <a href="/"><span class="more-btn"><i class="fas fa-arrow-circle-up"></i></span></a>
@@ -85,12 +83,12 @@
         </div>
 
 
-        <div class="star-card">
+        <!-- <div class="star-card">
             <a href="/star-cards">
                 <img src="https://rcopestake65.github.io/right_to_remain_dev/images/star-card-sm-01.png">
                 <p>Star Cards</p>
             </a>
-        </div>
+        </div> -->
 
         <div class="next-btn-container">
             <a href="/claim-asylum"><span class="more-btn"><i class="fas fa-arrow-circle-down"></i></span></a>

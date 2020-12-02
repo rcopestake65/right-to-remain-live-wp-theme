@@ -1,4 +1,4 @@
-//======main menu hamburger
+//======stages slide-in menu 
 
 //open
 document.querySelector('.menu-open-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.toggle('show'));
@@ -11,12 +11,12 @@ document.querySelector('.menu-open-btn').addEventListener('click', () => documen
 //close
 //document.querySelector('.menu-close-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
 
-//close main-menu if any other btn clicked
-document.querySelector('.flip-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
-document.querySelector('.flip-btn-back').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
-document.querySelector('.read-more-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
+//close stages menu if any other btn clicked
+// document.querySelector('.flip-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
+// document.querySelector('.flip-btn-back').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
+// document.querySelector('.read-more-btn').addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));
 
-//close main-menu if star cards btn clicked
+//close stages menu if star cards btn clicked
 const closeMenu2 = document.querySelectorAll(".card-btn");
 for (let i = 0; i < closeMenu2.length; i++) {
     closeMenu2[i].addEventListener('click', () => document.querySelector('.main-nav').classList.remove('show'));

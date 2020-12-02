@@ -22,6 +22,9 @@ if( have_posts() ) :
     <section class="stages">
 
         <div class="container pt2">
+            <div class="next-btn-container">
+                <a href="/"><span class="more-btn"><i class="fas fa-arrow-circle-up"></i></span></a>
+            </div>
             <div class="intro-grid">
                 <div class="intro-grid-item grid-item-1">
                     <h2 style="color:<?php the_field('background_colour'); ?>"><?php the_title(); ?></h2>
@@ -61,7 +64,7 @@ if( have_posts() ) :
 
                         <p> <?php echo $problemText; ?></p>
                         <div class="flip-btn">
-                            <img src="https://rcopestake65.github.io/right_to_remain_dev/images/flip-icon.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/flip-icon.png" alt="">
                         </div>
                     </div>
                     <div class="card-back" style="background-color:<?php the_field('card_back'); ?>">
@@ -82,7 +85,7 @@ if( have_posts() ) :
 
 
                         <div class="flip-btn-back">
-                            <img src="https://rcopestake65.github.io/right_to_remain_dev/images/flip-back.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/flip-back.png" alt="">
                         </div>
 
                     </div>
@@ -115,10 +118,10 @@ if( have_posts() ) :
             </div><!-- end problem container -->
 
 
-            <!-- 
-        <div class="next-btn-container">
-            <a href="#"><span class="more-btn"><i class="fas fa-arrow-circle-down"></i></span></a>
-        </div> -->
+
+            <div class="next-btn-container">
+                <a href="#"><span class="more-btn"><i class="fas fa-arrow-circle-down"></i></span></a>
+            </div>
 
         </div><!-- end .container -->
 

@@ -6,6 +6,10 @@
 <?php get_template_part( 'navigation');?>
 <!-- end menu -->
 
+<!-- ========== UTILITIES MENU ================== -->
+<?php get_template_part( 'utilities');?>
+<!-- end utlities menu -->
+
 <?php
 
 if( have_posts() ) :
