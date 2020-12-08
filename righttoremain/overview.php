@@ -19,6 +19,7 @@
  $fresh_outcomes = get_field( "background_colour", 363 );
     
 ?>
+
 <section class="overview-section">
     <div class="illustration-1"><img src="/wp-content/uploads/walking-man-4.png" alt=""></div>
     <div class="illustration-2"><img src="/wp-content/uploads/walking-women-v2.png" alt=""></div>
@@ -26,6 +27,8 @@
         <div class="next-btn-container">
             <a href="/"><span class="more-btn"><i class="fas fa-arrow-circle-up"></i></span></a>
         </div>
+		
+
         <h2>An Overview of the Stages</h2>
 
         <div class="nav-item-container">

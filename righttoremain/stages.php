@@ -10,6 +10,37 @@
 <?php get_template_part( 'utilities');?>
 <!-- end utlities menu -->
 
+
+		<?php 
+		
+			function get_page_by_template($template = '') {
+			  $args = array(
+				'meta_key' => '_wp_page_template',
+				'meta_value' => $template, 
+				'sort_column' => 'menu_order'
+			  );
+			  return get_pages($args); 
+}
+			$pagesWithStages = get_page_by_template('stages.php');
+//			var_dump($pagesWithStages);
+
+			global $post;
+//			echo $post->ID;
+
+			$key = array_search($post->ID, array_column($pagesWithStages, 'ID'));
+			
+			if ($key > 0)
+				$previousPage = get_permalink($pagesWithStages[$key-1]->ID);
+			else 
+				$previousPage = "https://youngasylumguide.org.uk/overview/";
+			
+			if ($key >= 11)
+				$nextPage = "https://youngasylumguide.org.uk/star-cards/";
+			else 
+				$nextPage = get_permalink($pagesWithStages[$key+1]->ID);							
+	
+
+		?>
 <?php
 
 if( have_posts() ) :
@@ -23,7 +54,7 @@ if( have_posts() ) :
 
         <div class="container pt2">
             <div class="next-btn-container">
-                <a href="/"><span class="more-btn"><i class="fas fa-arrow-circle-up"></i></span></a>
+                <a href="<?php echo $previousPage; ?>"><span class="more-btn"><i class="fas fa-arrow-circle-up"></i></span></a>
             </div>
             <div class="intro-grid">
                 <div class="intro-grid-item grid-item-1">
@@ -120,7 +151,7 @@ if( have_posts() ) :
 
 
             <div class="next-btn-container">
-                <a href="#"><span class="more-btn"><i class="fas fa-arrow-circle-down"></i></span></a>
+                <a href="<?php echo $nextPage; ?>"><span class="more-btn"><i class="fas fa-arrow-circle-down"></i></span></a>
             </div>
 
         </div><!-- end .container -->
