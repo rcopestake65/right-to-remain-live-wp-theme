@@ -187,6 +187,29 @@ section {
 
 /*===== MAIN NAVIGATION  ==================*/
 
+/*=== Top Nav ===*/
+
+.top-nav ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    background-color: #83afff;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.top-nav ul li{
+    padding-right: 10px;
+}
+.top-nav ul li a{
+    color: #fff;
+}
+.top-nav ul li a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+
 /*=== open & close btns ===*/
 
 .menu-open-btn {

@@ -229,6 +229,10 @@ $.each($(".card-container"), function (i, element) {
 
   })
 
+//pulse animation on flip card icon
+
+gsap.set(".flip-btn", { opacity: 0.5 });
+gsap.to(".flip-btn", { opacity: 1, duration: 1, repeat: -1, yoyo: true });
 
 //Problem Read More Cards
 

@@ -19,6 +19,12 @@
  $fresh_outcomes = get_field( "background_colour", 363 );
     
 ?>
+
+<!-- ========== UTILITIES MENU ================== -->
+<?php get_template_part( 'utilities');?>
+<!-- end utlities menu -->
+
+
 <section class="overview-section">
     <div class="illustration-1"><img src="/wp-content/uploads/walking-man-4.png" alt=""></div>
     <div class="illustration-2"><img src="/wp-content/uploads/walking-women-v2.png" alt=""></div>
