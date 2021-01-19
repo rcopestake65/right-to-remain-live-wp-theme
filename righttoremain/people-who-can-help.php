@@ -1,4 +1,4 @@
-<?php /* Template Name: Star Cards */ ?>
+<?php /* Template Name: People */ ?>
 <?php get_header();?>
 
 
@@ -18,7 +18,7 @@ if( have_posts() ) :
 
 <section class="star-cards">
 
-    <div class="container">
+    <div class="container pt2">
         <div class="intro-grid">
             <div class="intro-grid-item grid-item-1">
                 <h2><?php the_title(); ?></h2>

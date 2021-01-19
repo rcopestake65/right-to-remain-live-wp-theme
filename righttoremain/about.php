@@ -18,9 +18,17 @@ if( have_posts() ) :
 <section class="about">
     <div class="container pt2">
 
+        <div class="intro-grid">
+            <div class="intro-grid-item grid-item-1">
+                <h2 style="color:<?php the_field('background_colour'); ?>"><?php the_title(); ?></h2>
+                <?php the_content(); ?>
+            </div>
+            <div class="intro-grid-item grid-item-2">
+                <img class="face" src="<?php the_field('illustration'); ?>">
+            </div>
+        </div><!-- end intro-grid -->
 
-        <h2 style="color:<?php the_field('background_colour'); ?>"><?php the_title(); ?></h2>
-        <?php the_content(); ?>
+
 
 
 

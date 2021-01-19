@@ -6,6 +6,11 @@
                 <div class="entry-content">
                     <?php the_content(); ?>
                     </div> -->
+
+<!-- ========== UTILITIES MENU ================== -->
+<?php get_template_part( 'utilities');?>
+<!-- end utlities menu -->
+
 <section>
     <div class="container home">
         <img class="logo" src="<?php the_field('logo'); ?>" />

@@ -233,6 +233,10 @@ $.each($(".card-container"), function (i, element) {
 
   })
 
+//pulse animation on flip card icon
+
+gsap.set(".flip-btn", { opacity: 0.5 });
+gsap.to(".flip-btn", { opacity: 1, duration: 1, repeat: -1, yoyo: true });
 
 //Problem Read More Cards
 
@@ -722,6 +726,72 @@ var tlcardsClose15 = new gsap.timeline({ paused: true });
 
 $(".card-close-btn-15").on("click", function () {
   tlcards15.reverse();
+});
+
+/*card-16 show*/
+var tlcards16 = new gsap.timeline({ paused: true });
+
+$(".card-btn-16").on("click", function () {
+  tlcards16.play();
+});
+
+tlcards16.to(".card-16", {
+  scaleX: 1,
+  scaleY: 1,
+  transformOrigin: "center center",
+  opacity: 1,
+  duration: 0.5,
+  display: "block",
+});
+
+var tlcardsClose16 = new gsap.timeline({ paused: true });
+
+$(".card-close-btn-16").on("click", function () {
+  tlcards16.reverse();
+});
+
+/*card-17 show*/
+var tlcards17 = new gsap.timeline({ paused: true });
+
+$(".card-btn-17").on("click", function () {
+  tlcards17.play();
+});
+
+tlcards17.to(".card-17", {
+  scaleX: 1,
+  scaleY: 1,
+  transformOrigin: "center center",
+  opacity: 1,
+  duration: 0.5,
+  display: "block",
+});
+
+var tlcardsClose17 = new gsap.timeline({ paused: true });
+
+$(".card-close-btn-17").on("click", function () {
+  tlcards17.reverse();
+});
+
+/*card-18 show*/
+var tlcards18 = new gsap.timeline({ paused: true });
+
+$(".card-btn-18").on("click", function () {
+  tlcards18.play();
+});
+
+tlcards18.to(".card-18", {
+  scaleX: 1,
+  scaleY: 1,
+  transformOrigin: "center center",
+  opacity: 1,
+  duration: 0.5,
+  display: "block",
+});
+
+var tlcardsClose18 = new gsap.timeline({ paused: true });
+
+$(".card-close-btn-18").on("click", function () {
+  tlcards18.reverse();
 });
 ///////////////////////////////////////////////////////
 
