@@ -11,7 +11,7 @@
 <!-- end utlities menu -->
 
 
-		<?php 
+<?php 
 		
 			function get_page_by_template($template = '') {
 			  $args = array(
@@ -54,7 +54,8 @@ if( have_posts() ) :
 
         <div class="container pt2">
             <div class="next-btn-container">
-                <a href="<?php echo $previousPage; ?>"><span class="more-btn"><i class="fas fa-arrow-circle-up"></i></span></a>
+                <a href="<?php echo $previousPage; ?>"><span class="more-btn"><i
+                            class="fas fa-arrow-circle-up"></i></span></a>
             </div>
             <div class="intro-grid">
                 <div class="intro-grid-item grid-item-1">
@@ -151,7 +152,8 @@ if( have_posts() ) :
 
 
             <div class="next-btn-container">
-                <a href="<?php echo $nextPage; ?>"><span class="more-btn"><i class="fas fa-arrow-circle-down"></i></span></a>
+                <a href="<?php echo $nextPage; ?>"><span class="more-btn"><i
+                            class="fas fa-arrow-circle-down"></i></span></a>
             </div>
 
         </div><!-- end .container -->
