@@ -35,7 +35,7 @@
 				$previousPage = "https://youngasylumguide.org.uk/overview/";
 			
 			if ($key >= 11)
-				$nextPage = "https://youngasylumguide.org.uk/star-cards/";
+				$nextPage = "https://youngasylumguide.org.uk/people-who-can-help/";
 			else 
 				$nextPage = get_permalink($pagesWithStages[$key+1]->ID);							
 	
