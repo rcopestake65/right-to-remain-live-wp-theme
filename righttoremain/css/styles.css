@@ -196,9 +196,10 @@ section {
     background-color: #83afff;
     margin-bottom: 0;
     margin-left: 0;
+    padding: 5px;
 }
 .top-nav ul li{
-    padding-right: 1.25rem;
+    padding-right: 1.5rem;
 }
 .top-nav ul li a{
     color: #fff;
