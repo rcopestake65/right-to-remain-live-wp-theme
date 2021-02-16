@@ -25,7 +25,7 @@
     $submit_appeal_menu_color = get_field( "menu_text_colour", 346 );
     $appeal_hearing_menu_color = get_field( "menu_text_colour", 353 );
     $possible_outcomes_menu_color = get_field( "menu_text_colour", 357 );
-    $fresh_claimv = get_field( "menu_text_colour", 360 );
+    $fresh_claim_menu_color = get_field( "menu_text_colour", 360 );
     $fresh_outcomes_menu_color = get_field( "menu_text_colour", 363 );
 	
 	
