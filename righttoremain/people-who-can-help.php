@@ -32,6 +32,36 @@ if( have_posts() ) :
 
         <div class="star-card-container">
 
+
+            <!--eduction and plans cards are separate-->
+
+            <div class="ed-card-menu">
+                <?php if( have_rows('ed-cards')) : while (have_rows('ed-cards')) : the_row();
+            $edCardTitle = get_sub_field('ed_card_title');
+            $edCardDetails = get_sub_field('ed_card_details');
+            
+            ?>
+                <div class="card-btn ed-card-btn-<?php echo get_row_index(); ?>">
+                    <div class="card-menu-item ed-card-menu-item-<?php echo get_row_index(); ?>">
+                        <h5><?php echo $edCardTitle; ?></h5>
+
+                    </div>
+                </div>
+
+                <div class="card ed-card-<?php echo get_row_index(); ?>">
+                    <div class="card-close-btn ed-card-close-btn-<?php echo get_row_index(); ?>">
+                        <i class="fas fa-window-close fa-2x"></i>
+                    </div>
+                    <p><?php echo $edCardTitle; ?></p>
+                    <?php echo $edCardDetails; ?>
+
+                </div>
+                <?php endwhile; endif; ?>
+            </div><!-- end card-menu-grid -->
+
+            <!--end of education/plans cards-->
+
+            <!--main grid of cards-->
             <div class="card-menu">
                 <?php if( have_rows('cards')) : while (have_rows('cards')) : the_row();
             $cardTitle = get_sub_field('card_title');
@@ -44,16 +74,13 @@ if( have_posts() ) :
 
                     </div>
                 </div>
-                <!-- card 1 -->
+
                 <div class="card card-<?php echo get_row_index(); ?>">
                     <div class="card-close-btn card-close-btn-<?php echo get_row_index(); ?>">
                         <i class="fas fa-window-close fa-2x"></i>
                     </div>
                     <p><?php echo $cardTitle; ?></p>
                     <?php echo $cardDetails; ?>
-
-                    <h4></h4>
-
 
                 </div>
                 <?php endwhile; endif; ?>

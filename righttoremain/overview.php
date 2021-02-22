@@ -47,7 +47,7 @@
         </div>
 
 
-        <h2>An Overview of the Stages</h2>
+        <h3>An Overview of the Stages of a Young Person's Asylum Journey</h3>
 
         <div class="nav-item-container">
             <a href="/claim-asylum">
@@ -59,12 +59,12 @@
             <a href="/welfare-interview">
                 <div class="nav-item nav-item-2"
                     style="background-color:<?php echo $welfare; ?>; color:<?php echo $welfare_menu_color; ?>">
-                    Welfare Interview</div>
+                    Welfare (Small) Interview</div>
             </a>
             <a href="/local-authority-care">
                 <div class="nav-item nav-item-3"
                     style="background-color:<?php echo $local; ?>; color:<?php echo $local_menu_color; ?>">Local
-                    Authority Care
+                    Authority Care (Social Services)
                 </div>
             </a>
             <a href="/statement-of-evidence-form">
@@ -76,7 +76,7 @@
             <a href="/substantive-interview">
                 <div class="nav-item nav-item-5"
                     style="background-color:<?php echo $substantive_interview; ?>; color:<?php echo $substantive_interview_menu_color; ?>">
-                    Substantive
+                    Substantive (Big)
                     Interview</div>
             </a>
             <a href="/home-office-positive-decision">

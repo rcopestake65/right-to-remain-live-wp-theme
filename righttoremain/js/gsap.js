@@ -402,6 +402,57 @@ gsap.set([".card"], { opacity: 0, scaleX: 0, scaleY: 0, display: "none" });
 
 ///////////////////////////////////////////////////////
 
+/*///////////////Education and Plans Grid of Cards\\\\\\\\\\\\\\\\\\\\*/
+
+
+/*ed-card-1 show*/
+var tledcards1 = new gsap.timeline({ paused: true });
+
+$(".ed-card-btn-1").on("click", function () {
+  tledcards1.play();
+});
+
+tledcards1.to(".ed-card-1", {
+  scaleX: 1,
+  scaleY: 1,
+  transformOrigin: "center center",
+  opacity: 1,
+  duration: 0.5,
+  display: "block",
+});
+
+/*close ed-card-1*/
+var tledcardsClose1 = new gsap.timeline({ paused: true });
+
+$(".ed-card-close-btn-1").on("click", function () {
+  tledcards1.reverse();
+});
+/*ed-card-2 show*/
+var tledcards2 = new gsap.timeline({ paused: true });
+
+$(".ed-card-btn-2").on("click", function () {
+  tledcards2.play();
+});
+
+tledcards2.to(".ed-card-2", {
+  scaleX: 1,
+  scaleY: 1,
+  transformOrigin: "center center",
+  opacity: 1,
+  duration: 0.5,
+  display: "block",
+});
+
+/*close ed-card-2*/
+var tledcardsClose2 = new gsap.timeline({ paused: true });
+
+$(".ed-card-close-btn-2").on("click", function () {
+  tledcards2.reverse();
+});
+
+
+
+/*///////////////Main Grid of Cards\\\\\\\\\\\\\\\\\\\\*/
 /*card-1 show*/
 
 var tlcards1 = new gsap.timeline({ paused: true });

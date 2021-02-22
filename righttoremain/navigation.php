@@ -25,7 +25,7 @@
     $submit_appeal_menu_color = get_field( "menu_text_colour", 346 );
     $appeal_hearing_menu_color = get_field( "menu_text_colour", 353 );
     $possible_outcomes_menu_color = get_field( "menu_text_colour", 357 );
-    $fresh_claimv = get_field( "menu_text_colour", 360 );
+    $fresh_claim_menu_color = get_field( "menu_text_colour", 360 );
     $fresh_outcomes_menu_color = get_field( "menu_text_colour", 363 );
 	
 	
@@ -69,12 +69,12 @@
             <a href="/welfare-interview">
                 <div class="nav-item nav-item-2"
                     style="background-color:<?php echo $welfare; ?>; color:<?php echo $welfare_menu_color; ?>">
-                    Welfare Interview</div>
+                    Welfare (Small) Interview</div>
             </a>
             <a href="/local-authority-care">
                 <div class="nav-item nav-item-3"
                     style="background-color:<?php echo $local; ?>; color:<?php echo $local_menu_color; ?>">Local
-                    Authority Care
+                    Authority Care (Social Services)
                 </div>
             </a>
             <a href="/statement-of-evidence-form">
@@ -86,7 +86,7 @@
             <a href="/substantive-interview">
                 <div class="nav-item nav-item-5"
                     style="background-color:<?php echo $substantive_interview; ?>; color:<?php echo $substantive_interview_menu_color; ?>">
-                    Substantive
+                    Substantive (Big)
                     Interview</div>
             </a>
             <a href="/home-office-positive-decision">
