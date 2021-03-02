@@ -149,7 +149,7 @@ section {
 }
 
 .container {
-    padding: 0 30px 50px 30px;
+    padding: 0 30px 50px 80px;
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
@@ -166,13 +166,13 @@ section {
         padding-top: 50px;
     }
 }
-
+/*
 @media (max-width: 600px) {
     .container {
         width: 90%;
     }
 }
-
+*/
 .intro-grid {
     display: grid;
     grid-template-columns: 1fr 35%;
@@ -203,7 +203,7 @@ section {
 }
 .top-nav ul li a{
     color: #fff;
-    font-size: 1.25rem;
+    font-size: .9rem;
 }
 .top-nav ul li a:hover{
     color: #fff;
@@ -219,8 +219,8 @@ section {
     height: 100px;
     padding: 5px 0 0 5px;
     position: absolute;
-    top: 10%;
-    left: 365px;
+    top: 35px;
+    left: 100%;
     background-color: var(--off-white);
     border-radius: 5px;
     display: flex;
@@ -237,7 +237,7 @@ section {
     display: none;
 } */
 
-@media (min-width: 800px) {
+
     .menu-open-btn p {
         transform: rotate(-90deg);
         display: block;
@@ -251,7 +251,7 @@ section {
         text-align: center;
         padding-left: 10px;
     }
-}
+
 
 
 
@@ -271,7 +271,7 @@ section {
 .menu-open-btn .fa-arrow-circle-down {
     display: none;
 }
-
+/*
 @media (max-width: 800px) {
     .menu-open-btn .fa-arrow-circle-right {
         display: none;
@@ -280,7 +280,7 @@ section {
         display: inline-block;
     }
 }
-
+*/
 .menu-open-btn:hover {
     cursor: pointer;
 }
@@ -297,7 +297,7 @@ section {
     min-width: 360px;
     min-height: 100vh;
     padding: 30px;
-    transform: translateX(-375px);
+    transform: translateX(-105%);
     transition: transform 0.5s ease-in-out;
     z-index: 20;
     -webkit-box-shadow: 3px 6px 3px 0px rgba(209, 209, 209, 0.53);
@@ -346,7 +346,13 @@ section {
     display: none;
 }
 /*=== wider slide-in main nav on small devices ===*/
-
+/*styles for phone menu coming in from left side*/
+@media (max-width: 400px) {
+.main-nav {
+    min-width: 280px;
+}
+}
+/*
 @media (max-width: 800px) {
     .menu-open-btn {
         width: 100px;
@@ -370,7 +376,6 @@ section {
         margin-bottom: 0;
     }
     .menu-open-btn i{
-        /* padding-left: 10px; */
         font-size: 1rem;
     }
     .main-nav {
@@ -403,7 +408,7 @@ section {
         margin-bottom: .5rem;
     }
 }
-
+*/
 /*nav items*/
 
 .nav-container {
