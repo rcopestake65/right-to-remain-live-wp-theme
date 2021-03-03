@@ -380,10 +380,12 @@ $(".menu-open-btn").on("click", function () {
   tlcardFull8.reverse();
   tlcardFull9.reverse();
   tlcardFull10.reverse();
-  //not needed until content increases
-  //tlcardFull11.reverse();
-  //tlcardFull12.reverse();
-  
+  tlcardFull11.reverse();
+  tlcardFull12.reverse();
+  tlcardFull13.reverse();
+  tlcardFull14.reverse();
+  tlcardFull15.reverse();
+  tlcardFull16.reverse();
 });
 
 
@@ -427,6 +429,7 @@ var tledcardsClose1 = new gsap.timeline({ paused: true });
 $(".ed-card-close-btn-1").on("click", function () {
   tledcards1.reverse();
 });
+
 /*ed-card-2 show*/
 var tledcards2 = new gsap.timeline({ paused: true });
 
@@ -448,6 +451,75 @@ var tledcardsClose2 = new gsap.timeline({ paused: true });
 
 $(".ed-card-close-btn-2").on("click", function () {
   tledcards2.reverse();
+});
+
+/*ed-card-3 show*/
+var tledcards3 = new gsap.timeline({ paused: true });
+
+$(".ed-card-btn-3").on("click", function () {
+  tledcards3.play();
+});
+
+tledcards3.to(".ed-card-3", {
+  scaleX: 1,
+  scaleY: 1,
+  transformOrigin: "center center",
+  opacity: 1,
+  duration: 0.5,
+  display: "block",
+});
+
+/*close ed-card-3*/
+var tledcardsClose3 = new gsap.timeline({ paused: true });
+
+$(".ed-card-close-btn-3").on("click", function () {
+  tledcards3.reverse();
+});
+
+/*ed-card-4 show*/
+var tledcards4 = new gsap.timeline({ paused: true });
+
+$(".ed-card-btn-4").on("click", function () {
+  tledcards4.play();
+});
+
+tledcards4.to(".ed-card-4", {
+  scaleX: 1,
+  scaleY: 1,
+  transformOrigin: "center center",
+  opacity: 1,
+  duration: 0.5,
+  display: "block",
+});
+
+/*close ed-card-4*/
+var tledcardsClose4 = new gsap.timeline({ paused: true });
+
+$(".ed-card-close-btn-4").on("click", function () {
+  tledcards4.reverse();
+});
+
+/*ed-card-5 show*/
+var tledcards5 = new gsap.timeline({ paused: true });
+
+$(".ed-card-btn-5").on("click", function () {
+  tledcards5.play();
+});
+
+tledcards5.to(".ed-card-5", {
+  scaleX: 1,
+  scaleY: 1,
+  transformOrigin: "center center",
+  opacity: 1,
+  duration: 0.5,
+  display: "block",
+});
+
+/*close ed-card-5*/
+var tledcardsClose5 = new gsap.timeline({ paused: true });
+
+$(".ed-card-close-btn-5").on("click", function () {
+  tledcards5.reverse();
 });
 
 
@@ -859,3 +931,32 @@ function cardOut() {
 }
 
 }//end if starCards statement
+
+//close star cards if stages menu opened
+
+$(".menu-open-btn").on("click", function () {
+  tlcards1.reverse();
+  tlcards2.reverse();
+  tlcards3.reverse();
+  tlcards4.reverse();
+  tlcards5.reverse();
+  tlcards6.reverse();
+  tlcards7.reverse();
+  tlcards8.reverse();
+  tlcards9.reverse();
+  tlcards10.reverse();
+  tlcards11.reverse();
+  tlcards12.reverse();
+  tlcards13.reverse();
+  tlcards14.reverse();
+  tlcards15.reverse();
+  tlcards16.reverse();
+  tlcards17.reverse();
+  tlcards18.reverse();
+  tledcards1.reverse();
+  tledcards2.reverse();
+  tledcards3.reverse();
+  tledcards4.reverse();
+  tledcards5.reverse();
+  tledcards6.reverse();
+});

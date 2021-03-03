@@ -1120,7 +1120,7 @@ section {
 .ed-card-menu {
     display: grid;
     grid-gap: 25px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: auto;
     justify-items: center;
     margin-bottom: 3rem;
@@ -1141,6 +1141,22 @@ section {
 .ed-card-btn-2{
     grid-column: 2;
     grid-row: 1;
+}
+.ed-card-btn-3{
+    grid-column: 3;
+    grid-row: 1;
+}
+.ed-card-btn-4{
+    grid-column: 1;
+    grid-row: 2;
+}
+.ed-card-btn-5{
+    grid-column: 2;
+    grid-row: 3;
+}
+.ed-card-btn-6{
+    grid-column: 3;
+    grid-row: 3;
 }
 .card-btn-3{
     grid-column: 3;
@@ -1206,11 +1222,11 @@ section {
     grid-column: 3;
     grid-row: 6;
 }
-.card-1, .card-2, .card-3, .ed-card-1, .ed-card-2 {
+.card-1, .card-2, .card-3, .ed-card-1, .ed-card-2, .ed-card-3 {
     grid-column: 1 / -1;
     grid-row: 1;
 }
-.card-4, .card-5, .card-6 {
+.card-4, .card-5, .card-6, .ed-card-4, .ed-card-5, .ed-card-6 {
     grid-column: 1 / -1;
     grid-row: 2;
 }
@@ -1232,9 +1248,10 @@ section {
 }
 
 @media (max-width: 800px){
-    .card-menu {
+    .card-menu, .ed-card-menu {
         grid-template-columns: 1fr 1fr;
     }
+    
     /*-- positioning the cards on the grid - medium screen--*/
 .card-btn-1{
     grid-column: 1;
@@ -1251,6 +1268,22 @@ section {
 .ed-card-btn-2{
     grid-column: 2;
     grid-row: 1;
+}
+.ed-card-btn-3{
+    grid-column: 1;
+    grid-row: 2;
+}
+.ed-card-btn-4{
+    grid-column: 2;
+    grid-row: 2;
+}
+.ed-card-btn-5{
+    grid-column: 1;
+    grid-row: 3;
+}
+.ed-card-btn-6{
+    grid-column: 2;
+    grid-row: 3;
 }
 .card-btn-3{
     grid-column: 1;
@@ -1324,6 +1357,14 @@ section {
     grid-column: 1 / -1;
     grid-row: 1;
 }
+.ed-card-3, .ed-card-4 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+.ed-card-5, .ed-card-6 {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
 .card-3, .card-4 {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -1358,7 +1399,7 @@ section {
 }
 }
 @media (max-width:600px){
-    .card-menu {
+    .card-menu, .ed-card-menu {
         grid-template-columns: 1fr;
     }
         /*-- positioning the cards on the grid - small screen--*/
@@ -1377,6 +1418,22 @@ section {
 .ed-card-btn-2{
     grid-column: 1;
     grid-row: 2;
+}
+.ed-card-btn-3{
+    grid-column: 1;
+    grid-row: 3;
+}
+.ed-card-btn-4{
+    grid-column: 1;
+    grid-row: 4;
+}
+.ed-card-btn-5{
+    grid-column: 1;
+    grid-row: 5;
+}
+.ed-card-btn-6{
+    grid-column: 1;
+    grid-row: 6;
 }
 .card-btn-3{
     grid-column: 1;
@@ -1457,6 +1514,22 @@ section {
 .ed-card-2 {
     grid-column: 1 / -1;
     grid-row: 2;
+}
+.ed-card-3 {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+.ed-card-4 {
+    grid-column: 1 / -1;
+    grid-row: 4;
+}
+.ed-card-5 {
+    grid-column: 1 / -1;
+    grid-row: 5;
+}
+.ed-card-6 {
+    grid-column: 1 / -1;
+    grid-row: 6;
 }
 .card-3 {
     grid-column: 1 / -1;
@@ -1555,7 +1628,7 @@ section {
     color: #000;
 }
 
-.card-menu-item-1, .card-menu-item-2, .ed-card-menu-item-1, .ed-card-menu-item-2, .card-menu-item-3, .card-menu-item-4, .card-menu-item-4, .card-menu-item-5, .card-menu-item-6, .card-menu-item-7, .card-menu-item-8, .card-menu-item-9, .card-menu-item-10, .card-menu-item-11, .card-menu-item-12, .card-menu-item-13, .card-menu-item-14, .card-menu-item-15, .card-menu-item-16, .card-menu-item-17, .card-menu-item-18 {
+.card-menu-item-1, .card-menu-item-2, .card-menu-item-3, .card-menu-item-4, .card-menu-item-4, .card-menu-item-5, .card-menu-item-6, .card-menu-item-7, .card-menu-item-8, .card-menu-item-9, .card-menu-item-10, .card-menu-item-11, .card-menu-item-12, .card-menu-item-13, .card-menu-item-14, .card-menu-item-15, .card-menu-item-16, .card-menu-item-17, .card-menu-item-18,.ed-card-menu-item-1, .ed-card-menu-item-2, .ed-card-menu-item-3, .ed-card-menu-item-4, .ed-card-menu-item-5, .ed-card-menu-item-6  {
     background-repeat: no-repeat;
     background-size: 152px 212px;
     min-height: 212px;
@@ -1569,7 +1642,8 @@ section {
 .card-menu-item-2 {
     background-image: url("../images/playing-card-02.png");
 }
-.ed-card-menu-item-1, .ed-card-menu-item-2 {
+/*includes some spare unused ones*/
+.ed-card-menu-item-1, .ed-card-menu-item-2, .ed-card-menu-item-3, .ed-card-menu-item-4, .ed-card-menu-item-5, .ed-card-menu-item-6 {
     background-image: url("../images/playing-card-09.png");
 }
 .card-menu-item-3 {
